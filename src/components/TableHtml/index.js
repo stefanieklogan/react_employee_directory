@@ -1,6 +1,6 @@
 import React from "react";
-import TableData from "../TableData"
-import API from "../../utils"
+// import TableData from "../TableData"
+// import API from "../../utils"
 
 function TableHtml() {
     return (
