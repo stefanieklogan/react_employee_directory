@@ -7,9 +7,9 @@ import SearchBar from "./components/SearchBar";
 function App() {
   return (
     <div className="App">
-<Jumbotron />
-<SearchBar />
-      <TableHtml/>
+      <Jumbotron />
+      <SearchBar />
+      <TableHtml />
     </div>
   );
 }

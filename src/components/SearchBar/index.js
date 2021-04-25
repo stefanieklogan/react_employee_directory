@@ -1,9 +1,10 @@
 import React from "react";
+import './style.css';
 
 function SearchBar() {
     return (
-        <div className="container">
-         <input type="text" className="search" placeholder="Search for employee"/>   
+        <div className="searchContainer">
+         <input type="text" className="searchInput" placeholder="Search for employee"/>   
         </div>
     );
 }
