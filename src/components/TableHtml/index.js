@@ -1,38 +1,27 @@
 import React from "react";
 // import TableData from "../TableData"
 // import API from "../../utils"
+// var FontAwesome = require('react-fontawesome');
+// className="fas fa-sort-alpha-down">
+
 import './style.css';
 
-function TableHtml() {
+function TableHtml(props) {
+
+  const { format, headings, rows } = props;
+
   return (
-    <table className="font table table-striped">
+    <table className={`table ${props.format || "table-striped"}`}>
       <thead>
         <tr>
-          <th scope="col">Photo</th>
-          <th scope="col">First name</th>
-          <th scope="col">Last name</th>
-          <th scope="col">Email</th>
-          <th scope="col">Phone</th>
-          <th scope="col">Nationality</th>
+          {headings.map(heading => <th scope="col">{heading}</th>)}
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="col">:| </th>
-          <td>Moira</td>
-          <td>Rose</td>
-          <td>Moira@email.com</td>
-          <td>407-828-1000</td>
-          <td>CAN</td>
-        </tr>
-        <tr>
-          <th scope="col">:| </th>
-          <td>David</td>
-          <td>Rose</td>
-          <td>Moira@email.com</td>
-          <td>407-828-1000</td>
-          <td>CAN</td>
-        </tr>
+
+          {rows.map(row => <tr>{row.map(item => <td>{item}</td>)}</tr>)}
+
+       
       </tbody>
     </table>
   );
