@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Jumbotron from './components/Jumbotron';
-import TableHtml from "./components/TableHtml";
+import TableData from "./components/TableData";
 import SearchBar from "./components/SearchBar";
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <Jumbotron />
       <SearchBar />
-      <TableHtml />
+      <TableData />
     </div>
   );
 }
