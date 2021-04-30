@@ -12,6 +12,7 @@ function App() {
       <TableData />
     </div>
   );
+
 }
 
 export default App;

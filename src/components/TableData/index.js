@@ -20,7 +20,7 @@ class TableData extends Component {
                 console.log(employees.data.results);
                 const rows = employees.data.results.map(employee => {
                     console.log(employee);
-                    return [employee.picture.thumbnail, `${employee.name.first} ${employee.name.last}`, employee.email, employee.phone, employee.nat]
+                    return [<img src={employee.picture.thumbnail} alt={employee.name}></img>, `${employee.name.first} ${employee.name.last}`, employee.email, employee.phone, employee.nat]
                 })
 
                 console.log(rows);
@@ -29,28 +29,16 @@ class TableData extends Component {
             .catch(err => console.log(err));
     };
 
-    handleInputChange = event => {
-        const value = event.target.value;
-        const name = event.target.name;
-        this.setState({
-            [name]: value
-        })
-    };
-
-    handleFormSubmit = event => {
-        event.preventDefault();
-        this.searchEmployee(this.state.search);
-    };
-
     render() {
         return (
             <TableHtml
-                headings={this.state.headings}
-                rows={this.state.rows}
-                format={this.state.format}
+            headings={this.state.headings}
+            rows={this.state.rows}
+            format={this.state.format}
             />
         )
     };
+   
 }
 
 export default TableData;
