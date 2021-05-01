@@ -6,8 +6,7 @@ class TableData extends Component {
     state = {
         rows: [[]],
         headings: ["Picture", "Name", "Email", "Phone", "Nationality"],
-        format: "",
-        search: "",
+        format: ""
     };
 
     componentDidMount() {
@@ -18,7 +17,8 @@ class TableData extends Component {
         API.getEmployee()
             .then(employees => {
                 console.log(employees.data.results);
-                const rows = employees.data.results.map(employee => {
+                const rows = employees.data.results.filter(employee => employee.name.first.toLowerCase().includes(this.props.search.toLowerCase()))
+                .map(employee => {
                     console.log(employee);
                     return [<img src={employee.picture.thumbnail} alt={employee.name}></img>, `${employee.name.first} ${employee.name.last}`, employee.email, employee.phone, employee.nat]
                 })
