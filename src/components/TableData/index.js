@@ -7,7 +7,8 @@ class TableData extends Component {
         rows: [[]],
         headings: ["Picture", "Name", "Email", "Phone", "Nationality"],
         format: "",
-        employees: []
+        employees: [],
+        sort: "DESC"
     };
 
     componentDidMount() {
@@ -28,6 +29,26 @@ class TableData extends Component {
         this.setState({ rows })
     }
 
+    handleClickChange = e => {
+        if (this.state.sort === "DESC") {
+            this.setState({ sort: "ASCEND" })
+        } else {
+            this.setState({ sort: "DESC"})
+        }
+        this.handleSort();
+    }
+
+    handleSort = () => {
+        const sortedArr = [...this.state.employees]
+        console.log(sortedArr);
+        if (this.state.sort === "DESC") {
+        sortedArr.sort((a,b) => (a.first > b.first) ? 1:-1)}
+        else {
+        sortedArr.sort((a,b) => (a.first < b.first) ? 1:-1)
+        } 
+        this.setState({employees:sortedArr}, () => {this.displayEmployees()})
+    }
+
     searchEmployee = () => {
         API.getEmployee()
             .then(employees => {
@@ -42,6 +63,7 @@ class TableData extends Component {
         return (
             <TableHtml
                 headings={this.state.headings}
+                click={this.handleClickChange}
                 rows={this.state.rows}
                 format={this.state.format}
             />
