@@ -5,7 +5,7 @@ import TableData from "./components/TableData";
 import SearchBar from "./components/SearchBar";
 
 function App() {
-  const [search, setSearch] = useState();
+  const [search, setSearch] = useState('');
   return (
     <div className="App">
       <Jumbotron />
@@ -13,7 +13,6 @@ function App() {
       <TableData search={search}/>
     </div>
   );
-
 }
 
 export default App;
