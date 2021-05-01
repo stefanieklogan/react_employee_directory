@@ -7,7 +7,7 @@ class TableData extends Component {
         rows: [[]],
         headings: ["Picture", "Name", "Email", "Phone", "Nationality"],
         format: "",
-        search: ""
+        search: "",
     };
 
     componentDidMount() {
