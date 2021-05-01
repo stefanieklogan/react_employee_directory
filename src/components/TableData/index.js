@@ -42,10 +42,10 @@ class TableData extends Component {
         const sortedArr = [...this.state.employees]
         console.log(sortedArr);
         if (this.state.sort === "DESC") {
-        sortedArr.sort((a,b) => (a.first > b.first) ? 1:-1)}
+        sortedArr.sort((a,b) => a.name.first.localeCompare(b.name.first))}
         else {
-        sortedArr.sort((a,b) => (a.first < b.first) ? 1:-1)
-        } 
+        sortedArr.sort((a,b) => b.name.first.localeCompare(a.name.first))
+        }
         this.setState({employees:sortedArr}, () => {this.displayEmployees()})
     }
 
