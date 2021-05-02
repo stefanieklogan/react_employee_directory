@@ -1,9 +1,13 @@
-.searchContainer {
-    background-color: black;
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
 
+.searchContainer {
+    background-color: #336699;
+    font-family: 'josefin sans', cursive;
 }
 
 .searchInput {
     margin-bottom: 20px;
     margin-top: 20px;
+    font-family: 'josefin sans', cursive;
+    width: 300px;
 }

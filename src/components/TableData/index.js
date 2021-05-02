@@ -21,9 +21,9 @@ class TableData extends Component {
 
     displayEmployees = () => {
 
-        const rows = this.state.employees.filter(employee => employee.name.first.toLowerCase().includes(this.props.search))
+        const rows = this.state.employees.filter(employee => employee.name.last.toLowerCase().includes(this.props.search))
             .map(employee => {
-                return [<img src={employee.picture.thumbnail} alt={employee.name}></img>, `${employee.name.first} ${employee.name.last}`, employee.email, employee.phone, employee.nat]
+                return [<img src={employee.picture.thumbnail} alt={employee.name}></img>, ` ${employee.name.last}, ${employee.name.first}`, employee.email, employee.phone, employee.nat]
             })
         console.log(rows);
         this.setState({ rows })
@@ -42,9 +42,9 @@ class TableData extends Component {
         const sortedArr = [...this.state.employees]
         console.log(sortedArr);
         if (this.state.sort === "DESC") {
-        sortedArr.sort((a,b) => a.name.first.localeCompare(b.name.first))}
+        sortedArr.sort((a,b) => a.name.last.localeCompare(b.name.last))}
         else {
-        sortedArr.sort((a,b) => b.name.first.localeCompare(a.name.first))
+        sortedArr.sort((a,b) => b.name.last.localeCompare(a.name.last))
         }
         this.setState({employees:sortedArr}, () => {this.displayEmployees()})
     }

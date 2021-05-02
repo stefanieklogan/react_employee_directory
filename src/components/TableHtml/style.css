@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+
 body {
     background-color: white
 }
 
 .font {
-    color: rgb(30, 83, 30);
+    font-family: 'josefin sans', cursive;
 }
