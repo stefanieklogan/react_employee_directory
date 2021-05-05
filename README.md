@@ -15,7 +15,7 @@
 
 * Walk thru video: https://drive.google.com/file/d/1zl2Y4oPSNRvbE0OhS-5kRUhP8svls1RG/view
 
-https://github.com/stefanieklogan/react_employee_directory/blob/main/public/homepage.JPG
+![homepage image](https://github.com/stefanieklogan/react_employee_directory/blob/main/public/homepage.JPG)
 
 <a name="overview"></a>
 ## Project overview
